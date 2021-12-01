@@ -1,0 +1,16 @@
+sion|>
+value|>
+char:1:1 '('
+expression|>
+product|>
+value|regex:1:2 '4'
+char:1:4 '*'
+value|regex:1:6 '2'
+char:1:8 '*'
+value|regex:1:10 '11'
+char:1:13 '+'
+product|value|regex:1:15 '2'
+char:1:16 ')'
+char:1:18 '-'
+product|value|regex:1:20 '5'
+regexrintf("mac:%s\n", mac);
