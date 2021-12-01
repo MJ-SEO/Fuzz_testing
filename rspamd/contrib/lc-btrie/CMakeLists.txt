@@ -1,0 +1,6 @@
+SET(LCTRIESRC            btrie.c)
+ADD_LIBRARY(lcbtrie STATIC ${LCTRIESRC})
+
+SET(LCTRIE_CFLAGS "-DBUILD_RSPAMD")
+
+set_target_properties(lcbtrie PROPERTIES COMPILE_FLAGS "${LCTRIE_CFLAGS}")

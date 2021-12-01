@@ -1,0 +1,66 @@
+base16_test.c:         yarrow_read(in, x, &yarrow_prng);
+base32_test.c:         yarrow_read(in, x, &yarrow_prng);
+base64_test.c:       yarrow_read(in, x, &yarrow_prng);
+common.c:prng_state yarrow_prng;
+common.h:extern prng_state yarrow_prng;
+der_test.c:         if (yarrow_read(buf[0], z, &yarrow_prng) != z) {
+der_test.c:         if (yarrow_read(buf[2], z, &yarrow_prng) != z) {
+der_test.c:       yarrow_read(buf[0], zz, &yarrow_prng);
+der_test.c:       yarrow_read(buf[0], zz, &yarrow_prng);
+der_test.c:       yarrow_read(buf[0], 4, &yarrow_prng);
+der_test.c:          yarrow_read(buf[0], 4, &yarrow_prng);
+dh_test.c:   DO(dh_generate_key(&yarrow_prng, find_prng ("yarrow"), &k));
+dh_test.c:      DO(dh_generate_key(&yarrow_prng, find_prng("yarrow"), &k3));
+dh_test.c:   DO(dh_generate_key(&yarrow_prng, find_prng ("yarrow"), &usera));
+dh_test.c:   DO(dh_generate_key(&yarrow_prng, find_prng ("yarrow"), &userb));
+dh_test.c:      DO(dh_generate_key(&yarrow_prng, find_prng ("yarrow"), &usera));
+dsa_test.c:  DO(dsa_generate_key(&yarrow_prng, find_prng("yarrow"), &key));
+dsa_test.c:   DO(dsa_generate_pqg(&yarrow_prng, find_prng("yarrow"), 20, 128, &key));
+dsa_test.c:   DO(dsa_generate_key(&yarrow_prng, find_prng("yarrow"), &key));
+dsa_test.c:   DO(dsa_encrypt_key(msg, 16, out, &x, &yarrow_prng, find_prng("yarrow"), find_hash("sha1"), &key));
+dsa_test.c:   DO(dsa_sign_hash(msg, sizeof(msg), out, &x, &yarrow_prng, find_prng("yarrow"), &key));
+ecc_test.c:          LTC_ARGCHK(yarrow_read(buf, sizes[x], &yarrow_prng) == sizes[x]);
+ecc_test.c:          LTC_ARGCHK(yarrow_read(buf, sizes[x], &yarrow_prng) == sizes[x]);
+ecc_test.c:          LTC_ARGCHK(yarrow_read(buf, sizes[x], &yarrow_prng) == sizes[x]);
+ecc_test.c:          LTC_ARGCHK(yarrow_read(buf, sizes[x], &yarrow_prng) == sizes[x]);
+ecc_test.c:      DO(ecc_make_key (&yarrow_prng, find_prng ("yarrow"), sizes[s], &usera));
+ecc_test.c:      DO(ecc_make_key (&yarrow_prng, find_prng ("yarrow"), sizes[s], &userb));
+ecc_test.c:      DO(ecc_make_key (&yarrow_prng, find_prng ("yarrow"), sizes[s], &usera));
+ecc_test.c:      DO(ecc_encrypt_key (buf[0], 32, buf[1], &y, &yarrow_prng, find_prng ("yarrow"), find_hash ("sha256"), &pubKey));
+ecc_test.c:      DO(ecc_sign_hash (buf[0], 16, buf[1], &x, &yarrow_prng, find_prng ("yarrow"), &privKey));
+ecc_test.c:      DO(ecc_sign_hash_rfc7518(buf[0], 16, buf[1], &x, &yarrow_prng, find_prng ("yarrow"), &privKey));
+ecc_test.c:      DO(ecc_make_key_ex(&yarrow_prng, find_prng ("yarrow"), &key, dp));
+ecc_test.c:      DO(ecc_generate_key(&yarrow_prng, find_prng ("yarrow"), &key));
+ecc_test.c:      DO(ecc_sign_hash(data16, 16, buf, &len, &yarrow_prng, find_prng ("yarrow"), &privkey));
+ecc_test.c:      DO(ecc_sign_hash_ex(data16, 16, buf, &len, &yarrow_prng, find_prng ("yarrow"),
+ecc_test.c:         DO(ecc_sign_hash(data16, 16, buf, &len, &yarrow_prng, find_prng ("yarrow"), &privkey));
+ecc_test.c:      DO(ecc_encrypt_key(data16, 16, buf, &len, &yarrow_prng, find_prng("yarrow"), find_hash("sha256"), &pubkey));
+ecc_test.c:      DO(ecc_generate_key(&yarrow_prng, find_prng ("yarrow"), &key));
+ecc_test.c:      DO(ecc_sign_hash_ex(data16, 16, buf, &len, &yarrow_prng, find_prng ("yarrow"), LTC_ECCSIG_RFC7518, &recid, &privkey));
+ed25519_test.c:   if ((ret = ed25519_make_key(&yarrow_prng, find_prng("yarrow"), &key)) != CRYPT_OK) {
+modes_test.c:   yarrow_read(pt,  64, &yarrow_prng);
+modes_test.c:   yarrow_read(key, 16, &yarrow_prng);
+modes_test.c:   yarrow_read(iv,  16, &yarrow_prng);
+pkcs_1_test.c:      DO(pkcs_1_oaep_encode(buf[0], l3, lparam, lparamlen, modlen, &yarrow_prng, prng_idx, hash_idx, buf[1], &l1));
+pkcs_1_test.c:      DO(pkcs_1_pss_encode(buf[0], l3, saltlen, &yarrow_prng, prng_idx, hash_idx, modlen, buf[1], &l1));
+rsa_test.c:   DO(rsa_make_key(&yarrow_prng, prng_idx, sizeof(buf)/8, 65537, &key));
+rsa_test.c:   SHOULD_FAIL_WITH(rsa_make_key_ubin_e(&yarrow_prng, prng_idx, 128, e, elen, &key),
+rsa_test.c:   DO(rng_make_prng(elen * 8, prng_idx, &yarrow_prng, NULL));
+rsa_test.c:   LTC_ARGCHK(yarrow_read(e, elen, &yarrow_prng) == elen);
+rsa_test.c:   SHOULD_FAIL_WITH(rsa_make_key_ubin_e(&yarrow_prng, prng_idx, 128, e, elen, &key),
+rsa_test.c:   SHOULD_FAIL_WITH(rsa_make_key_ubin_e(&yarrow_prng, prng_idx, 128, e, elen, &key),
+rsa_test.c:   DO(rsa_make_key_ubin_e(&yarrow_prng, prng_idx, 128, e, elen, &key));
+rsa_test.c:      DO(rsa_make_key(&yarrow_prng, prng_idx, 1024/8, 65537, &key));
+rsa_test.c:      yarrow_read(in, rsa_msgsize, &yarrow_prng);
+rsa_test.c:      DO(rsa_encrypt_key(in, rsa_msgsize, out, &len, NULL, 0, &yarrow_prng, prng_idx, hash_idx, &key));
+rsa_test.c:      DO(rsa_encrypt_key(in, rsa_msgsize, out, &len, lparam, sizeof(lparam), &yarrow_prng, prng_idx, hash_idx, &key));
+rsa_test.c:      yarrow_read(in, rsa_msgsize, &yarrow_prng);
+rsa_test.c:      DO(rsa_encrypt_key_ex(in, rsa_msgsize, out, &len, NULL, 0, &yarrow_prng, prng_idx, 0, LTC_PKCS_1_V1_5, &key));
+rsa_test.c:   DO(rsa_sign_hash(in, 20, out, &len, &yarrow_prng, prng_idx, hash_idx, 0, &key));
+rsa_test.c:   DO(rsa_sign_hash(in, 20, out, &len, &yarrow_prng, prng_idx, hash_idx, 8, &privKey));
+rsa_test.c:   DO(rsa_sign_hash_ex(in, 20, out, &len, LTC_PKCS_1_V1_5, &yarrow_prng, prng_idx, hash_idx, 8, &privKey));
+rsa_test.c:     DO(rsa_sign_hash_ex(p, 20, p2, &len2, LTC_PKCS_1_V1_5, &yarrow_prng, prng_idx, hash_idx, 8, &privKey));
+store_test.c:     yarrow_read(buf+z,   y, &yarrow_prng);
+store_test.c:     yarrow_read(buf+z+y, y, &yarrow_prng);
+test.c:   if ((err = rng_make_prng(128, find_prng("yarrow"), &yarrow_prng, NULL)) != CRYPT_OK) {
+x25519_test.c:   DO(x25519_make_key(&yarrow_prng, prng_idx, &priv));

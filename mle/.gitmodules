@@ -1,0 +1,9 @@
+[submodule "uthash"]
+	path = vendor/uthash
+	url = https://github.com/troydhanson/uthash.git
+[submodule "lua"]
+	path = vendor/lua
+	url = https://github.com/lua/lua.git
+[submodule "pcre"]
+	path = vendor/pcre
+	url = https://github.com/adsr/pcre.git

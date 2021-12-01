@@ -1,0 +1,31 @@
+{
+    "extends": "stylelint-config-standard",
+    "overrides": [
+        {
+            "files": ["**/*.html"],
+            "customSyntax": "postcss-html"
+        },
+        {
+            "files": ["**/*.js"],
+            "customSyntax": "@stylelint/postcss-css-in-js"
+        }
+    ],
+    "ignoreFiles": [
+        "**/*.min.css",
+        "**/*.min.js",
+        "interface/css/d3evolution.css",
+        "interface/css/nprogress.css",
+        "interface/css/prism.css"
+    ],
+    "rules": {
+        "alpha-value-notation": null,
+        "at-rule-empty-line-before": null,
+        "color-hex-length": null,
+        "comment-empty-line-before": null,
+        "indentation": 4,
+        "number-leading-zero": null,
+        "property-no-vendor-prefix": null,
+        "rule-empty-line-before": null,
+        "value-no-vendor-prefix": null
+    }
+}

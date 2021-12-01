@@ -1,12 +1,12 @@
 start_time        : 1638334814
-last_update       : 1638348939
-run_time          : 14125
+last_update       : 1638349179
+run_time          : 14365
 fuzzer_pid        : 10021
 cycles_done       : 16
 cycles_wo_finds   : 1
-execs_done        : 3789429
-execs_per_sec     : 268.28
-execs_ps_last_min : 277.23
+execs_done        : 3854624
+execs_per_sec     : 268.33
+execs_ps_last_min : 267.23
 paths_total       : 14
 paths_favored     : 2
 paths_found       : 12
@@ -23,7 +23,7 @@ unique_hangs      : 0
 last_path         : 1638345503
 last_crash        : 0
 last_hang         : 0
-execs_since_crash : 3789429
+execs_since_crash : 3854624
 exec_timeout      : 40
 slowest_exec_ms   : 0
 peak_rss_mb       : 0

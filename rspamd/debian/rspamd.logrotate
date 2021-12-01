@@ -1,0 +1,12 @@
+/var/log/rspamd/rspamd.log{
+       daily
+       rotate 4
+       delaycompress
+       compress
+       notifempty
+       missingok
+       postrotate
+          if [ -f /bin/systemctl ] ; then systemctl --signal USR1 kill rspamd.service ; else service rspamd reopenlog >/dev/null 2>&1 ; fi || true
+       endscript
+}
+
