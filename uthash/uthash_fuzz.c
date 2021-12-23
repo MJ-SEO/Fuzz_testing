@@ -93,7 +93,6 @@ int main(){
 	fgets(data, BUF_SIZE, stdin);
 	size_t size = strlen(data);
 	//	printf("Data: %s(%ld)\n", data, size);
-
 	test_utstring(data, size);
 
 	test_uthash(data, size);

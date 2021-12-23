@@ -48,7 +48,6 @@ void test32_rc4(char* data, size_t size){
 		exit(1);
 	}
 	/* encrypt buffer */
-	strcpy(buf, data);
 	if (rc4_read(buf, size, &prng) != size) {
 		printf("RC4 read error\n");
 		exit(1);
