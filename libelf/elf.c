@@ -682,6 +682,7 @@ readelfsect(FILE *f, char *name, Fhdr *fp)
 		n = getstr(fp, fp->name);
 		if (n == NULL)
 			return NULL;
+
 		if (strcmp(n, name) == 0)
 			return newsection(f, fp->offset, fp->size);
 	}

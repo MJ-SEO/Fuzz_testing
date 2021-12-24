@@ -8,6 +8,9 @@
 #include <stdint.h>
 #include <elf.h>
 
+// #define DISPLAY_INPUT_HEX
+// #define DISPLAY_INPUT_PLAIN
+
 #define BUF_SIZE 4096
 
 char* read_data_from_file(const char *path, size_t *ptr_data_size)
@@ -64,23 +67,31 @@ int main(int argc, char* argv[]){
 	uint64_t len;
 	
 	data = read_data_from_file(argv[1], &data_size);
-	
+
 	f = fmemopen(data, data_size, "rb");
 	if (f == NULL){
 		perror("F error!");
 		return -1;
 	}
 
-	readelf(f, &fhdr);
-
-	buf = readelfsection(f, ".text", &len, &fhdr);
+	readelfsection(f, ".text", &len, &fhdr);
 	if(buf == NULL){
 		perror("buf NULL");
 		return -1;
 	}
-
+/*
+	readelfsection(f, ".note.gnu.build-id", &len, &fhdr);
+	readelfsection(f, ".gnu.hash", &len, &fhdr);
+	readelfsection(f, ".dynsym", &len, &fhdr);
+	readelfsection(f, ".dynstr", &len, &fhdr);
+	readelfsection(f, ".gun.version", &len, &fhdr);
+	readelfsection(f, ".rela.plt", &len, &fhdr);
+	readelfsection(f, ".init", &len, &fhdr);
+	readelfsection(f, ".plt", &len, &fhdr);
+*/
 	printelfhdr(&fhdr);	
 
 	freeelf(&fhdr);
+	fclose(f);
 	return 0;
 }

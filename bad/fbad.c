@@ -53,12 +53,22 @@ char* read_data_from_file(const char *path, size_t *ptr_data_size)
 	return buffer;
 }
 
-char* inp = NULL;
+//char* inp = NULL;
 size_t data_size;
 
 int main(int argc, char * argv[]){
+	char* inp = (char*)malloc(sizeof(char)* 100);
 
-	inp = read_data_from_file(argv[1], &data_size);
+	FILE* fp = fopen(argv[1], "rb");
+	if(fp == NULL){
+		perror("file error");
+		exit(1);
+	}	
+	
+	data_size = fread(inp, 1, 100, fp);
+
+//	inp = read_data_from_file(argv[1], &data_size);
+	
 	printf("buf: %s, size: %ld\n", inp, data_size);
 
 	if(strlen(inp) > 0 && inp[0] == 'b'){
